@@ -25,7 +25,9 @@ public class ApiController {
     @ResponseBody
     @RequestMapping(value = "addRedis", method = RequestMethod.GET)
     public String add() {
+
         redisService.addToRedis("whs","武海升",20);
+
         return "success";
     }
 }
