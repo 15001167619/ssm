@@ -1,16 +1,17 @@
 
-CREATE DATABASE beauty_ssm;
-USE beauty_ssm;
+CREATE DATABASE local_test;
+USE local_test;
 
 -- 用户表
-CREATE TABLE _user(
-`user_id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-`user_name` VARCHAR(50) NOT NULL COMMENT '用户名',
-`user_phone` BIGINT NOT NULL COMMENT '手机号',
-`score` INT NOT NULL COMMENT '积分',
-`create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-PRIMARY KEY (`user_id`),
-KEY `idx_user_phone`(`user_phone`)
-)ENGINE=INNODB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8 COMMENT='用户表';
-
+CREATE TABLE `user` (
+	`user_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+	`user_name` VARCHAR(255) NULL DEFAULT NULL COMMENT '姓名',
+	`user_phone` BIGINT(20) NULL DEFAULT NULL COMMENT '手机号',
+	PRIMARY KEY (`user_id`),
+	UNIQUE INDEX `mobile` (`user_phone`)
+)
+COMMENT='用户表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
 

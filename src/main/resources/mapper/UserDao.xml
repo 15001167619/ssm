@@ -4,7 +4,7 @@
 
 	<select id="findByPhone" resultType="User">
 		SELECT *
-		FROM _user
+		FROM `user`
 		WHERE 
 		user_phone= #{userPhone} limit 1
 	</select>

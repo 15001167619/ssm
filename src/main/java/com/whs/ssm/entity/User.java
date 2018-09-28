@@ -18,8 +18,5 @@ public class User {
 	private String userName;
 	
 	private long userPhone;
-	
-	private Date createTime;
-	
-	private int score;
+
 }
