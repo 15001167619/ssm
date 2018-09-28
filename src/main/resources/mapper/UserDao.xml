@@ -8,4 +8,9 @@
 		WHERE 
 		user_phone= #{userPhone} limit 1
 	</select>
+
+	<insert id="insert">
+		insert into `user`
+		(`user_name`) VALUES (#{userName});
+	</insert>
 </mapper>

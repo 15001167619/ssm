@@ -6,5 +6,7 @@ public interface UserDao {
 
     User findByPhone(long userPhone);
 
+    int insert(User user);
+
 
 }

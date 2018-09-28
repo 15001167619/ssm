@@ -29,4 +29,25 @@
 		<property name="connectionFactory"   ref="connectionFactory" />
 	</bean>
 
+	<!-- 设置redis消息订阅 -->
+	<bean id="messageListener" class="org.springframework.data.redis.listener.adapter.MessageListenerAdapter">
+		<constructor-arg>
+			<bean class="com.whs.ssm.api.DefaultMessageDel"/>
+		</constructor-arg>
+	</bean>
+
+	<bean id="redisContainer" class="org.springframework.data.redis.listener.RedisMessageListenerContainer">
+		<property name="connectionFactory" ref="connectionFactory"/>
+		<property name="messageListeners">
+		<map>
+			<entry key-ref="messageListener">
+				<list>
+					<bean class="org.springframework.data.redis.listener.ChannelTopic">
+					<constructor-arg value="__keyevent@0__:expired"/>
+				</bean>
+				</list>
+			</entry>
+		</map>
+		</property>
+	</bean>
 </beans>
