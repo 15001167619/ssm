@@ -2,8 +2,6 @@ package com.whs.ssm.api;
 
 import com.whs.ssm.dao.UserDao;
 import com.whs.ssm.entity.User;
-import com.whs.ssm.service.CoreRedisService;
-import com.whs.ssm.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
