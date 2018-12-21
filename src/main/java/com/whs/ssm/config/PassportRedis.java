@@ -1,6 +1,5 @@
 package com.whs.ssm.config;
 
-import jdk.nashorn.internal.objects.Global;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
